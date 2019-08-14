@@ -52,7 +52,7 @@ func (c *Config) runWorker(id int, wg *sync.WaitGroup, successCount *uint32, err
 		if err != nil {
 			fmt.Printf("Error: %v\n", err)
 			atomic.AddUint32(errorCount, 1)
-			return
+			continue
 		}
 
 		atomic.AddUint32(successCount, 1)
